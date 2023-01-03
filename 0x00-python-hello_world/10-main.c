@@ -31,7 +31,7 @@ int main(void)
 	else if (check_cycle(head) == 1)
 		printf("Linked list has a cycle\n");
 
-	current = head;
+	current = head->next->next;
 	for (i = 0; i < 4; i++)
 		current = current->next;
 	temp = current->next;
