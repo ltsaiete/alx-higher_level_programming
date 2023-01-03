@@ -5,6 +5,7 @@ if number < 0:
     number *= -1
     last = number % 10
     last *= -1
+    number *= -1
 else:
     last = number % 10
 
