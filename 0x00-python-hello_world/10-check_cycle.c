@@ -39,5 +39,7 @@ int check_cycle(listint_t *list)
 		result = _check_cycle(temp, temp->next);
 		temp = temp->next;
 	}
+	temp = NULL;
+	free(temp);
 	return (result);
 }
