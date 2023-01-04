@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <stdio.h>
 
 /**
  * _check_cycle - checks if current node is equal to head node.
@@ -38,6 +39,5 @@ int check_cycle(listint_t *list)
 		result = _check_cycle(temp, temp->next);
 		temp = temp->next;
 	}
-	free(temp);
 	return (result);
 }
