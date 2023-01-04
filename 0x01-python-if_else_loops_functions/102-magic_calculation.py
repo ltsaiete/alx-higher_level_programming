@@ -1,7 +1,3 @@
-#!/usr/bin/env python3
-import dis
-
-
 def magic_calculation(a, b, c):
     if a < b:
         return c
@@ -9,6 +5,3 @@ def magic_calculation(a, b, c):
         return a + b
 
     return a * b - c
-
-
-dis.dis(magic_calculation)
