@@ -5,4 +5,4 @@ for i in range(122, 96, -1):
     else:
         ch = chr(i-32)
 
-    print(ch, end='')
+    print('{:c}'.format(ch), end='')
