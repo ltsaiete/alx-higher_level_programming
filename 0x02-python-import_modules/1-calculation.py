@@ -1,1 +1,2 @@
-from calculator_1.py import mul, div, sub, add
+#!/usr/bin/python3
+from calculator_1 import mul, div, sub, add
