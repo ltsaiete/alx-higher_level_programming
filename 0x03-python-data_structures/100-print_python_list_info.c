@@ -1,7 +1,7 @@
 #include <Python.h>
 #include <stdio.h>
 
-void print_list_info(PyObject *p)
+void print_python_list_info(PyObject *p)
 {
 	// Get the length of the list
 	int len = PyList_Size(p);
