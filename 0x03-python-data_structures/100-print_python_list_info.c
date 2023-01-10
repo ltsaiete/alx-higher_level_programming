@@ -1,6 +1,13 @@
 #include <Python.h>
 #include <stdio.h>
 
+/**
+ * print_python_list_info -  prints some basic info about Python lists.
+ * @p: the python list object
+ *
+ * Return: void
+ */
+
 void print_python_list_info(PyObject *p)
 {
 	// Get the length of the list
