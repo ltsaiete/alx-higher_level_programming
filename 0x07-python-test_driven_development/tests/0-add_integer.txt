@@ -1,0 +1,71 @@
+================================
+This is the 0-add_integer.py module.
+================================
+
+This module only contains one function
+called ``add_integer(a, b=98)``
+
+# Checking for module docstring
+
+	>>> mod_docs = __import__("0-add_integer").__doc__
+	>>> len(mod_docs) > 5
+	True
+
+
+add_integer(a, b=98)
+====================
+The function ``add_integer(a, b=98)`` adds 2 integers, a and b.
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+	>>> add_integer(2, 3)
+	5
+
+# Checking for function docstring
+
+	>>> fun_docs = add_integer.__doc__
+	>>> len(fun_docs) > 5
+	True
+
+# When given a floating point value, it is converted to an integer.
+
+
+	>>> add_integer(2.4, 3)
+	5
+
+
+# When given a single argument it must be added to 98.
+
+	>>> add_integer(2)
+	100
+
+# Negative numbers must also be added.
+
+	>>> add_integer(-2, -3)
+	-5
+
+# If a or b are not integers it will raise a TypeError
+exception with the message a must be an integer or b must be an integer.
+
+	>>> add_integer(None)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+	>>> add_integer('Holberton', 2)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+
+
+	>>> add_integer(2, 'School')
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+# An iterable argument should raise an error.
+
+	>>> add_integer(2, [2, 3, 4])
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
