@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is a simple module and has only one function call
+This is a simple module and has only one function called
 add_integer
 """
 

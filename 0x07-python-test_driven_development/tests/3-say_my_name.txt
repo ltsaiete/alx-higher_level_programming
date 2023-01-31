@@ -1,0 +1,44 @@
+================================
+This is the module 3-say_my_name
+================================
+
+This module only contains one function called ``say_my_name``
+
+# The module should be documented
+::
+	>>> mod_docs = __import__('3-say_my_name').__doc__
+	>>> len(mod_docs) > 5
+	True
+
+Using say_my_name
+=================
+# This function prints My name is <first name> <last name>
+::
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+	>>> say_my_name('Lewis', 'Senpai')
+	My name is Lewis Senpai
+
+# The function should be documented
+::
+	>>> fun_docs = say_my_name.__doc__
+	>>> len(fun_docs) > 5
+	True
+
+# first_name and last_name must be strings
+::
+	>>> say_my_name(2, 'Lewis')
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+::
+	>>> say_my_name('Lewis', 2)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+# It should have at least one argument
+::
+	>>> say_my_name('Lewis')
+	My name is Lewis
+

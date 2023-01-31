@@ -1,0 +1,49 @@
+=====================================
+This is the module 5-text_indentation
+=====================================
+
+It only has one function called text_indentation
+
+# The module should be documented
+::
+	>>> mod_docs = __import__('5-text_indentation').__doc__
+	>>> len(mod_docs) > 5
+	True
+
+using text_indentation
+======================
+This function prints a text with 2 new lines
+after each of these characters: ., ? and :
+
+::
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+	>>> text_indentation('ALX. School')
+	ALX
+	<BLANKLINE>
+	School
+
+# The function should be documented
+::
+	>>> fun_docs = text_indentation.__doc__
+	>>> len(fun_docs) > 5
+	True
+
+# text must be a string
+::
+	>>> text_indentation(2)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+# There should be no space at the beginning or at the end of each printed line
+	>>> text_indentation('Text with space. at the beginning of the line')
+	Text with space
+	<BLANKLINE>
+	at the beginning of the line
+
+	>>> text_indentation('Text with space. at the end of the line : other text')
+	Text with space
+	<BLANKLINE>
+	at the end of the line
+	<BLANKLINE>
+	other text

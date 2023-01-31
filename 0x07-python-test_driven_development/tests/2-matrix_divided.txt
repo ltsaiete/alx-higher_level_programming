@@ -1,0 +1,76 @@
+=======================================
+This is the 2-matrix_divided.py module
+=======================================
+
+This module only contains one function called
+``matrix_divided``
+
+# The module should be documented
+
+	>>> mod_docs = __import__("2-matrix_divided").__doc__
+	>>> len(mod_docs) > 5
+	True
+
+Using matrix_divided
+====================
+
+The function ``matrix_divided(matrix, div)`` divides all elements of a matrix.
+::
+	>>> matrix_divided = __import__("2-matrix_divided").matrix_divided
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+It should be documented
+::
+	>>> fun_docs = matrix_divided.__doc__
+	>>> len (fun_docs) > 5
+	True
+
+Matrix should be a list of lists of integers or floats
+::
+	>>> matrix = [[1, 2, "ALX"], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+::
+	>>> matrix = [1, 2, 3]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+Each row of the matrix must be of the same size
+::
+	>>> matrix = [[1, 2, 3, 4], [4, 5, 6]]
+	>>> matrix_divided(matrix, 3)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+div must be a number
+::
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, "School")
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+div can’t be equal to 0
+::
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
+
+The divided elements should rounded to 2 decimal places
+::
+	>>> matrix = [[1.2222, 2.2222], [4.2222, 5.2222]]
+	>>> matrix_divided(matrix,1)
+	[[1.22, 2.22], [4.22, 5.22]]
+
