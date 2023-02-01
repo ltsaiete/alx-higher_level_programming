@@ -18,7 +18,7 @@ after each of these characters: ., ? and :
 ::
 	>>> text_indentation = __import__('5-text_indentation').text_indentation
 	>>> text_indentation('ALX. School')
-	ALX
+	ALX.
 	<BLANKLINE>
 	School
 
@@ -37,13 +37,18 @@ after each of these characters: ., ? and :
 
 # There should be no space at the beginning or at the end of each printed line
 	>>> text_indentation('Text with space. at the beginning of the line')
-	Text with space
+	Text with space.
 	<BLANKLINE>
 	at the beginning of the line
 
 	>>> text_indentation('Text with space. at the end of the line : other text')
-	Text with space
+	Text with space.
 	<BLANKLINE>
-	at the end of the line
+	at the end of the line :
 	<BLANKLINE>
 	other text
+
+# It should print a simple text as well
+::
+	>>> text_indentation('Holberton School')
+	Holberton School
