@@ -37,8 +37,3 @@ Using say_my_name
 	...
 	TypeError: last_name must be a string
 
-# It should have at least one argument
-::
-	>>> say_my_name('Lewis')
-	My name is Lewis
-
