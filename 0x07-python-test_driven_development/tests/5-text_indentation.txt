@@ -17,8 +17,8 @@ after each of these characters: ., ? and :
 
 ::
 	>>> text_indentation = __import__('5-text_indentation').text_indentation
-	>>> text_indentation('ALX. School')
-	ALX.
+	>>> text_indentation('Holberton.School')
+	Holberton.
 	<BLANKLINE>
 	School
 
