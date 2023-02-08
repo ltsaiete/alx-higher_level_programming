@@ -1,0 +1,43 @@
+===============================
+This is the 0-read_file module
+===============================
+
+This is a simple module and it only has
+one function called read_file(filename="")
+
+# The module should be documented
+::
+	>>> mod_docs = __import__('0-read_file').__doc__
+	>>> len(mod_docs) > 5
+	True
+
+Using read_file
+===============
+This function reads a text file (UTF8) and prints it to stdout
+
+::
+	>>> read_file = __import__('0-read_file').read_file
+	>>> read_file("my_file_0.txt")
+	We offer a truly innovative approach to education:
+	focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.
+	<BLANKLINE>
+	A school every software engineer would have dreamt of!
+	<BLANKLINE>
+
+# The function should be documented
+::
+	>>> fun_docs = read_file.__doc__
+	>>> len(fun_docs) > 5
+	True
+
+# When given an empty file it should print a blankline
+::
+	>>> read_file("empty.txt")
+	<BLANKLINE>
+
+# If the file does not exist it should raise a FileNotFoundError
+::
+	>>> read_file("none.txt")
+	Traceback (most recent call last):
+	...
+	FileNotFoundError: [Errno 2] No such file or directory: 'none.txt'
