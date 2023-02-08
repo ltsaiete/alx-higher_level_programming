@@ -22,7 +22,6 @@ This function reads a text file (UTF8) and prints it to stdout
 	focus on building reliable applications and scalable systems, take on real-world challenges, collaborate with your peers.
 	<BLANKLINE>
 	A school every software engineer would have dreamt of!
-	<BLANKLINE>
 
 # The function should be documented
 ::
@@ -33,7 +32,6 @@ This function reads a text file (UTF8) and prints it to stdout
 # When given an empty file it should print a blankline
 ::
 	>>> read_file("empty.txt")
-	<BLANKLINE>
 
 # If the file does not exist it should raise a FileNotFoundError
 ::
