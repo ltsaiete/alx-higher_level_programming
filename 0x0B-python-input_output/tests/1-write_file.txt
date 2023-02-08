@@ -1,0 +1,39 @@
+===============================
+This is the 1-write_file module
+===============================
+
+This is a simple module and it only has
+one function called write_file(filename="", text=""):
+
+# The module should be documented
+::
+	>>> mod_docs = __import__('1-write_file').__doc__
+	>>> len(mod_docs) > 5
+	True
+
+Using write_file
+=================
+
+This function reads a text file (UTF8) and prints it to stdout
+
+::
+	>>> write_file = __import__('1-write_file').write_file
+	>>> write_file("my_first_file.txt", "This School is so cool!\n")
+	24
+
+# The function should be documented
+::
+	>>> fun_docs = write_file.__doc__
+	>>> len(fun_docs) > 5
+	True
+
+# The function should replace the file
+::
+	>>> read_file = __import__('0-read_file').read_file
+	>>> read_file("my_first_file.txt")
+	This School is so cool!
+
+	>>> write_file("my_first_file.txt", "ALX School\n")
+	11
+	>>> read_file("my_first_file.txt")
+	ALX School

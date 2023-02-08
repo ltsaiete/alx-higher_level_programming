@@ -1,0 +1,28 @@
+=====================================
+This is the 4-from_json_string module
+=====================================
+
+This is a simple module and it only has
+one function called from_json_string(my_str)
+
+# The module should be documented
+::
+	>>> mod_docs = __import__('4-from_json_string').__doc__
+	>>> len(mod_docs) > 5
+	True
+
+using from_json_string
+=======================
+This function returns an object (Python data structure)
+represented by a JSON string
+
+::
+	>>> from_json_string = __import__('4-from_json_string').from_json_string
+	>>> type(from_json_string("[1, 2, 3]"))
+	<class 'list'>
+
+# The function should be documented
+::
+	>>> fun_docs = from_json_string.__doc__
+	>>> len(fun_docs) > 5
+	True

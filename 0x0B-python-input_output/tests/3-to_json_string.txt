@@ -1,0 +1,28 @@
+====================================
+This is the 3-to_json_string module
+====================================
+
+This is a simple module and it only has
+one function called to_json_string(my_obj)
+
+# The module should e documented
+::
+	>>> mod_docs = __import__('3-to_json_string').__doc__
+	>>> len(mod_docs) > 5
+	True
+
+using to_json_string
+=====================
+This function returns the JSON representation of an object (string)
+
+::
+	>>> to_json_string = __import__('3-to_json_string').to_json_string
+	>>> my_list = [1, 2, 3]
+	>>> type(to_json_string(my_list))
+	<class 'str'>
+
+# The function should be documented
+::
+	>>> fun_docs = to_json_string.__doc__
+	>>> len(fun_docs) > 5
+	True

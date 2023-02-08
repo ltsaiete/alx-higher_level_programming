@@ -1,0 +1,30 @@
+=======================================
+This is the 5-save_to_json_file module
+=======================================
+
+This is a simple module and it only has
+one function called save_to_json_file(my_obj, filename)
+
+# The module should be documented
+::
+	>>> mod_docs = __import__('5-save_to_json_file').__doc__
+	>>> len(mod_docs) > 5
+	True
+
+using save_to_json_file
+=======================
+This function  writes an Object to a text file,
+using a JSON representation:
+
+::
+	>>> save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+	>>> filename = "my_list.json"
+	>>> my_list = [1, 2, 3]
+	>>> save_to_json_file(my_list, filename)
+
+
+# The function should be documented
+::
+	>>> fun_docs = save_to_json_file.__doc__
+	>>> len(fun_docs) > 5
+	True

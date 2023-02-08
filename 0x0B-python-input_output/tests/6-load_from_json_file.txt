@@ -1,0 +1,25 @@
+=======================================
+This is the 6-load_from_json module
+=======================================
+This is a simple module and it only has
+one function called load_from_json_file
+
+# The module should be documented
+::
+	>>> mod_docs = __import__('6-load_from_json_file').__doc__
+	>>> len(mod_docs) > 5
+	True
+
+using load_from_json_file
+=======================
+This function function description
+::
+	>>> load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+	>>> type(load_from_json_file('my_list.json'))
+	<class 'list'>
+
+# The function should be documented
+::
+	>>> fun_docs = load_from_json_file.__doc__
+	>>> len(fun_docs) > 5
+	True
