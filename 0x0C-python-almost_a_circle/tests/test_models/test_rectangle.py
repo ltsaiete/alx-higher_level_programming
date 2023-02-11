@@ -1,7 +1,6 @@
 import unittest
 from models import rectangle
 from models.rectangle import Rectangle
-from models.base import Base
 
 
 class TestRectangle(unittest.TestCase):
@@ -108,12 +107,6 @@ class TestRectangle(unittest.TestCase):
             rect.set_y(-1)
         self.assertEqual(str(context.exception), 'y must be >= 0')
 
-    # def testDisplay(self):
-    #     rect = Rectangle(2, 4)
-    #     with self.capture_output() as captured:
-    #         rect.display()
-    #     self.assertEqual(captured.getvalue().strip(), "##\n##\n##\n##")
-
     def testArea(self):
         rect = Rectangle(2, 4)
         self.assertEqual(8, rect.area())
@@ -138,3 +131,31 @@ class TestRectangle(unittest.TestCase):
 
         rect.update(89, 3, 5, 2, 1)
         self.assertEqual('[Rectangle] (89) 2/1 - 3/5', rect.__str__())
+
+        rect.update(width=2)
+        self.assertEqual('[Rectangle] (89) 2/1 - 2/5', rect.__str__())
+
+        rect.update(height=6)
+        self.assertEqual('[Rectangle] (89) 2/1 - 2/6', rect.__str__())
+
+        rect.update(x=4)
+        self.assertEqual('[Rectangle] (89) 4/1 - 2/6', rect.__str__())
+
+        rect.update(y=4)
+        self.assertEqual('[Rectangle] (89) 4/4 - 2/6', rect.__str__())
+
+        rect.update(id=3)
+        self.assertEqual('[Rectangle] (3) 4/4 - 2/6', rect.__str__())
+
+        rect.update(width=10, height=12, x=1, y=1, id=90)
+        self.assertEqual('[Rectangle] (90) 1/1 - 10/12', rect.__str__())
+
+    def testDictionary(self):
+        rect = Rectangle(2, 4, id=19)
+        self.assertEqual({
+            'id': 19,
+            'width': 2,
+            'height': 4,
+            'x': 0,
+            'y': 0
+        }, rect.to_dictionary())

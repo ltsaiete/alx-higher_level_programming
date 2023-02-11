@@ -92,17 +92,43 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
-        return f'[Rectangle] ({self.id}) {self.__x}/{self.__y} - {self.__width}/{self.__height}'
+        str = f'[Rectangle] ({self.id}) {self.__x}/'
+        str += f'{self.__y} - {self.__width}/{self.__height}'
+        return str
 
-    def update(self, *args):
-        for i in range(len(args)):
-            if i == 0:
-                self.id = args[i]
-            elif i == 1:
-                self.set_width(args[i])
-            elif i == 2:
-                self.set_height(args[i])
-            elif i == 3:
-                self.set_x(args[i])
-            elif i == 4:
-                self.set_y(args[i])
+    def update(self, *args, **kwargs):
+        if args:
+            for i in range(len(args)):
+                if i == 0:
+                    self.id = args[i]
+                elif i == 1:
+                    self.set_width(args[i])
+                elif i == 2:
+                    self.set_height(args[i])
+                elif i == 3:
+                    self.set_x(args[i])
+                elif i == 4:
+                    self.set_y(args[i])
+        elif kwargs is not None:
+
+            for k, v in kwargs.items():
+                if k == 'width':
+                    self.set_width(v)
+                elif k == 'height':
+                    self.set_height(v)
+                elif k == 'x':
+                    self.set_x(v)
+                elif k == 'y':
+                    self.set_y(v)
+                elif k == 'id':
+                    self.id = v
+
+    def to_dictionary(self):
+        dict = {
+            'id': self.id,
+            'width': self.get_width(),
+            'height': self.get_height(),
+            'x': self.get_x(),
+            'y': self.get_y()
+        }
+        return dict
