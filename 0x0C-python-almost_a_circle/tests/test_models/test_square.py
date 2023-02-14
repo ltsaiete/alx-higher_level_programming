@@ -11,17 +11,17 @@ class TestSquare(unittest.TestCase):
     def testInstance(self):
         sq = Square(4, id=16)
         self.assertEqual(16, sq.id)
-        self.assertEqual(4, sq.get_width())
-        self.assertEqual(4, sq.get_height())
-        self.assertEqual(0, sq.get_x())
-        self.assertEqual(0, sq.get_y())
+        self.assertEqual(4, sq.width)
+        self.assertEqual(4, sq.height)
+        self.assertEqual(0, sq.x)
+        self.assertEqual(0, sq.y)
 
         sq = Square(5, 2, 3, id=16)
         self.assertEqual(16, sq.id)
-        self.assertEqual(5, sq.get_width())
-        self.assertEqual(5, sq.get_height())
-        self.assertEqual(2, sq.get_x())
-        self.assertEqual(3, sq.get_y())
+        self.assertEqual(5, sq.width)
+        self.assertEqual(5, sq.height)
+        self.assertEqual(2, sq.x)
+        self.assertEqual(3, sq.y)
 
     def testStr(self):
         sq = Square(2, id=17)
@@ -29,21 +29,21 @@ class TestSquare(unittest.TestCase):
 
     def testSize(self):
         sq = Square(2)
-        self.assertEqual(2, sq.get_size())
-        self.assertEqual(2, sq.get_width())
+        self.assertEqual(2, sq.size)
+        self.assertEqual(2, sq.width)
 
-        sq.set_size(4)
-        self.assertEqual(4, sq.get_size())
-        self.assertEqual(4, sq.get_width())
+        sq.size = 4
+        self.assertEqual(4, sq.size)
+        self.assertEqual(4, sq.width)
 
         with self.assertRaises(TypeError) as context:
             sq = Square(2)
-            sq.set_size('Hello')
+            sq.size = 'Hello'
         self.assertEqual(str(context.exception), 'width must be an integer')
 
         with self.assertRaises(ValueError) as context:
             sq = Square(2)
-            sq.set_size(0)
+            sq.size = 0
         self.assertEqual(str(context.exception), 'width must be > 0')
 
     def testUpdate(self):

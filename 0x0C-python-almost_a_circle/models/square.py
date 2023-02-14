@@ -40,28 +40,28 @@ class Square(Rectangle):
         Returns:
             _type_: _description_
         """
-        str = f'[Square] ({self.id}) {self.get_x()}/'
-        str += f'{self.get_y()} - {self.get_width()}'
+        str = f'[Square] ({self.id}) {self.x}/'
+        str += f'{self.y} - {self.width}'
         return str
 
     @property
-    def get_size(self):
+    def size(self):
         """get the size
 
         Returns:
             int: size
         """
-        return self.get_width()
+        return self.width
 
-    @set_size.setter
-    def set_size(self, size):
+    @size.setter
+    def size(self, size):
         """Set the size
 
         Args:
             size (int): new size
         """
-        self.set_width(size)
-        self.set_height(size)
+        self.width = size
+        self.height = size
 
     def update(self, *args, **kwargs):
         """
@@ -72,22 +72,22 @@ class Square(Rectangle):
                 if i == 0:
                     self.id = args[i]
                 elif i == 1:
-                    self.set_width(args[i])
-                    self.set_height(args[i])
+                    self.width = args[i]
+                    self.height = args[i]
                 elif i == 2:
-                    self.set_x(args[i])
+                    self.x = args[i]
                 elif i == 3:
-                    self.set_y(args[i])
+                    self.y = args[i]
         elif kwargs is not None:
 
             for k, v in kwargs.items():
                 if k == 'size':
-                    self.set_width(v)
-                    self.set_height(v)
+                    self.width = v
+                    self.height = v
                 elif k == 'x':
-                    self.set_x(v)
+                    self.x = v
                 elif k == 'y':
-                    self.set_y(v)
+                    self.y = v
                 elif k == 'id':
                     self.id = v
 
@@ -100,8 +100,8 @@ class Square(Rectangle):
         """
         dict = {
             'id': self.id,
-            'size': self.get_size(),
-            'x': self.get_x(),
-            'y': self.get_y()
+            'size': self.size,
+            'x': self.x,
+            'y': self.y
         }
         return dict

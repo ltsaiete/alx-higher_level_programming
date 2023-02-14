@@ -14,22 +14,22 @@ class TestRectangle(unittest.TestCase):
 
     def testGetters(self):
         rect = Rectangle(2, 4)
-        self.assertEqual(2, rect.get_width())
-        self.assertEqual(4, rect.get_height())
-        self.assertEqual(0, rect.get_x())
-        self.assertEqual(0, rect.get_y())
+        self.assertEqual(2, rect.width)
+        self.assertEqual(4, rect.height)
+        self.assertEqual(0, rect.x)
+        self.assertEqual(0, rect.y)
 
     def testSetters(self):
         rect = Rectangle(2, 4)
-        rect.set_width(5)
-        rect.set_height(10)
-        rect.set_x(2)
-        rect.set_y(2)
+        rect.width = 5
+        rect.height = 10
+        rect.x = 2
+        rect.y = 2
 
-        self.assertEqual(5, rect.get_width())
-        self.assertEqual(10, rect.get_height())
-        self.assertEqual(2, rect.get_x())
-        self.assertEqual(2, rect.get_y())
+        self.assertEqual(5, rect.width)
+        self.assertEqual(10, rect.height)
+        self.assertEqual(2, rect.x)
+        self.assertEqual(2, rect.y)
 
     def testTypes(self):
         with self.assertRaises(TypeError) as context:
@@ -68,43 +68,43 @@ class TestRectangle(unittest.TestCase):
     def testSettersTypes(self):
         with self.assertRaises(TypeError) as context:
             rect = Rectangle(2, 4)
-            rect.set_width('Hello')
+            rect.width = 'Hello'
         self.assertEqual(str(context.exception), 'width must be an integer')
 
         with self.assertRaises(TypeError) as context:
             rect = Rectangle(2, 4)
-            rect.set_height('Hello')
+            rect.height = 'Hello'
         self.assertEqual(str(context.exception), 'height must be an integer')
 
         with self.assertRaises(TypeError) as context:
             rect = Rectangle(2, 4)
-            rect.set_x('Hello')
+            rect.x = 'Hello'
         self.assertEqual(str(context.exception), 'x must be an integer')
 
         with self.assertRaises(TypeError) as context:
             rect = Rectangle(2, 4)
-            rect.set_y('Hello')
+            rect.y = 'Hello'
         self.assertEqual(str(context.exception), 'y must be an integer')
 
     def testSettersValues(self):
         with self.assertRaises(ValueError) as context:
             rect = Rectangle(2, 4)
-            rect.set_width(0)
+            rect.width = 0
         self.assertEqual(str(context.exception), 'width must be > 0')
 
         with self.assertRaises(ValueError) as context:
             rect = Rectangle(2, 4)
-            rect.set_height(0)
+            rect.height = 0
         self.assertEqual(str(context.exception), 'height must be > 0')
 
         with self.assertRaises(ValueError) as context:
             rect = Rectangle(2, 4)
-            rect.set_x(-1)
+            rect.x = -1
         self.assertEqual(str(context.exception), 'x must be >= 0')
 
         with self.assertRaises(ValueError) as context:
             rect = Rectangle(2, 4)
-            rect.set_y(-1)
+            rect.y = -1
         self.assertEqual(str(context.exception), 'y must be >= 0')
 
     def testArea(self):
@@ -185,7 +185,8 @@ class TestRectangle(unittest.TestCase):
 
         Rectangle.save_to_file_csv(list_rectangles_input)
         list_rects = Rectangle.load_from_file_csv()
-        self.assertEqual('[Rectangle] (20) 0/0 - 10/7', list_rects[0].__str__())
+        self.assertEqual('[Rectangle] (20) 0/0 - 10/7',
+                         list_rects[0].__str__())
         self.assertEqual('[Rectangle] (21) 0/0 - 2/4', list_rects[1].__str__())
 
         Rectangle.save_to_file_csv([])
