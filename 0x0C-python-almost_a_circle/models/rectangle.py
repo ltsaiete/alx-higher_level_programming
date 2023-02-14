@@ -17,6 +17,21 @@ class Rectangle(Base):
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
+        """
+        Creates an instance of Rectangle
+
+        Args:
+            width (int): width
+            height (int): height
+            x (int, optional): initial position. Defaults to 0.
+            y (int, optional): position. Defaults to 0.
+            id (int, optional): Rectangle id. Defaults to None.
+
+        Raises:
+            TypeError: att must be integers
+            ValueError: Validates the args values
+            ValueError: _description_
+        """
         super().__init__(id)
 
         for k, v in locals().items():
@@ -36,9 +51,23 @@ class Rectangle(Base):
         self.__y = y
 
     def get_width(self):
+        """get the width
+
+        Returns:
+            int: width
+        """
         return self.__width
 
     def set_width(self, width):
+        """Set the width
+
+        Args:
+            width (int): new width
+
+        Raises:
+            TypeError: Validates type
+            ValueError: Validates value
+        """
         if type(width) != int:
             raise TypeError('width must be an integer')
 
@@ -47,9 +76,23 @@ class Rectangle(Base):
         self.__width = width
 
     def get_height(self):
+        """get the height
+
+        Returns:
+            int: height
+        """
         return self.__height
 
     def set_height(self, height):
+        """Set the height
+
+        Args:
+            height (int): new height
+
+        Raises:
+            TypeError: Validates type
+            ValueError: Validates value
+        """
         if type(height) != int:
             raise TypeError('height must be an integer')
 
@@ -58,9 +101,23 @@ class Rectangle(Base):
         self.__height = height
 
     def get_x(self):
+        """get the x
+
+        Returns:
+            int: x
+        """
         return self.__x
 
     def set_x(self, x):
+        """Set the x
+
+        Args:
+            x (int): new x
+
+        Raises:
+            TypeError: Validates type
+            ValueError: Validates value
+        """
         if type(x) != int:
             raise TypeError('x must be an integer')
 
@@ -69,9 +126,23 @@ class Rectangle(Base):
         self.__x = x
 
     def get_y(self):
+        """get the y
+
+        Returns:
+            int: y
+        """
         return self.__y
 
     def set_y(self, y):
+        """Set the y
+
+        Args:
+            y (int): new y
+
+        Raises:
+            TypeError: Validates type
+            ValueError: Validates value
+        """
         if type(y) != int:
             raise TypeError('y must be an integer')
 
@@ -80,9 +151,17 @@ class Rectangle(Base):
         self.__y = y
 
     def area(self):
+        """calculates area of rectangle
+
+        Returns:
+            int: area
+        """
         return self.__width * self.__height
 
     def display(self):
+        """Displays the rectangle
+        using #s
+        """
         print('\n' * self.__y, end='')
 
         for i in range(self.__height):
@@ -92,11 +171,20 @@ class Rectangle(Base):
             print()
 
     def __str__(self):
+        """
+         returns [Rectangle] (<id>) <x>/<y> - <width>/<height>
+
+        Returns:
+            _type_: _description_
+        """
         str = f'[Rectangle] ({self.id}) {self.__x}/'
         str += f'{self.__y} - {self.__width}/{self.__height}'
         return str
 
     def update(self, *args, **kwargs):
+        """
+        assigns an argument to each attribute:
+        """
         if args:
             for i in range(len(args)):
                 if i == 0:
@@ -124,6 +212,12 @@ class Rectangle(Base):
                     self.id = v
 
     def to_dictionary(self):
+        """
+        returns the dictionary representation of a Rectangle
+
+        Returns:
+            dict: dictionary representation of a Rectangle
+        """
         dict = {
             'id': self.id,
             'width': self.get_width(),
@@ -132,4 +226,3 @@ class Rectangle(Base):
             'y': self.get_y()
         }
         return dict
-
