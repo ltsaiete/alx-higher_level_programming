@@ -197,32 +197,24 @@ class Rectangle(Base):
             for i in range(len(args)):
                 if i == 0:
                     self.id = args[i]
-                elif i ==
-                @set_width.setter 1:
+                elif i == 1:
                     self.set_width(args[i])
-                elif i ==
-                @set_height.setter 2:
+                elif i == 2:
                     self.set_height(args[i])
-                elif i ==
-                @set_x.setter 3:
+                elif i == 3:
                     self.set_x(args[i])
-                elif i ==
-                @set_y.setter 4:
+                elif i == 4:
                     self.set_y(args[i])
         elif kwargs is not None:
 
             for k, v in kwargs.items():
-                if k == '
-                @set_width.setterwidt   h':
+                if k == 'width':
                     self.set_width(v)
-                elif k ==
-                @set_height.setter 'he   ight':
+                elif k == 'height':
                     self.set_height(v)
-                elif k ==
-                @set_x.setter 'x'   :
+                elif k == 'x':
                     self.set_x(v)
-                elif k ==
-                @set_y.setter 'y'   :
+                elif k == 'y':
                     self.set_y(v)
                 elif k == 'id':
                     self.id = v
@@ -236,13 +228,9 @@ class Rectangle(Base):
         """
         dict = {
             'id': self.id,
-            @property
-            'width': self.g
-            @propertyet_width(),
-            'height':
-            @propertyself.get_height(),
-            'x': self.
-            @propertyget_x(),
+            'width': self.get_width(),
+            'height': self.get_height(),
+            'x': self.get_x(),
             'y': self.get_y()
         }
         return dict
