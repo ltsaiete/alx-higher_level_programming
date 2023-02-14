@@ -83,3 +83,38 @@ class TestSquare(unittest.TestCase):
             'x': 0,
             'y': 0
         }, sq.to_dictionary())
+
+    def testSaveToCSV(self):
+        s1 = Square(10, id=20)
+        s2 = Square(2, id=21)
+        list_squares_input = [s1, s2]
+
+        Square.save_to_file_csv(list_squares_input)
+        with open('Square.csv', encoding="utf-8") as f:
+            self.assertEqual("id,size,x,y\n20,10,0,0\n21,2,0,0\n", f.read())
+
+        Square.save_to_file_csv([])
+        with open('Square.csv', encoding="utf-8") as f:
+            self.assertEqual("id,size,x,y\n", f.read())
+
+        Square.save_to_file_csv(None)
+        with open('Square.csv', encoding="utf-8") as f:
+            self.assertEqual("id,size,x,y\n", f.read())
+
+    def testLoadCSV(self):
+        s1 = Square(10, id=20)
+        s2 = Square(2, id=21)
+        list_squares_input = [s1, s2]
+
+        Square.save_to_file_csv(list_squares_input)
+        list_squares = Square.load_from_file_csv()
+        self.assertEqual('[Square] (20) 0/0 - 10', list_squares[0].__str__())
+        self.assertEqual('[Square] (21) 0/0 - 2', list_squares[1].__str__())
+
+        Square.save_to_file_csv([])
+        list_squares = Square.load_from_file_csv()
+        self.assertEqual([], list_squares)
+
+        Square.save_to_file_csv(None)
+        list_squares = Square.load_from_file_csv()
+        self.assertEqual([], list_squares)

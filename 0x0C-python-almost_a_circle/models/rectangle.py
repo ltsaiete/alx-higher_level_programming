@@ -132,3 +132,4 @@ class Rectangle(Base):
             'y': self.get_y()
         }
         return dict
+

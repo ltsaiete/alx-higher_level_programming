@@ -159,3 +159,39 @@ class TestRectangle(unittest.TestCase):
             'x': 0,
             'y': 0
         }, rect.to_dictionary())
+
+    def testSaveToCSV(self):
+        r1 = Rectangle(10, 7, id=20)
+        r2 = Rectangle(2, 4, id=21)
+        list_rectangles_input = [r1, r2]
+
+        Rectangle.save_to_file_csv(list_rectangles_input)
+        with open('Rectangle.csv', encoding="utf-8") as f:
+            self.assertEqual(
+                "id,width,height,x,y\n20,10,7,0,0\n21,2,4,0,0\n", f.read())
+
+        Rectangle.save_to_file_csv([])
+        with open('Rectangle.csv', encoding="utf-8") as f:
+            self.assertEqual("id,width,height,x,y\n", f.read())
+
+        Rectangle.save_to_file_csv(None)
+        with open('Rectangle.csv', encoding="utf-8") as f:
+            self.assertEqual("id,width,height,x,y\n", f.read())
+
+    def testLoadCSV(self):
+        r1 = Rectangle(10, 7, id=20)
+        r2 = Rectangle(2, 4, id=21)
+        list_rectangles_input = [r1, r2]
+
+        Rectangle.save_to_file_csv(list_rectangles_input)
+        list_rects = Rectangle.load_from_file_csv()
+        self.assertEqual('[Rectangle] (20) 0/0 - 10/7', list_rects[0].__str__())
+        self.assertEqual('[Rectangle] (21) 0/0 - 2/4', list_rects[1].__str__())
+
+        Rectangle.save_to_file_csv([])
+        list_rects = Rectangle.load_from_file_csv()
+        self.assertEqual([], list_rects)
+
+        Rectangle.save_to_file_csv(None)
+        list_rects = Rectangle.load_from_file_csv()
+        self.assertEqual([], list_rects)
