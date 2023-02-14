@@ -25,6 +25,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    @staticmethod
     def to_json_string(list_dictionaries):
         """
         Converts a list of dictionaries to a json strin
@@ -58,6 +59,7 @@ class Base:
         with open(filename, 'w', encoding='utf-8') as f:
             f.write(json_str)
 
+    @staticmethod
     def from_json_string(json_string):
         """
         returns the list of the JSON string representation json_string
