@@ -44,6 +44,7 @@ class Square(Rectangle):
         str += f'{self.get_y()} - {self.get_width()}'
         return str
 
+    @property
     def get_size(self):
         """get the size
 
@@ -52,6 +53,7 @@ class Square(Rectangle):
         """
         return self.get_width()
 
+    @set_size.setter
     def set_size(self, size):
         """Set the size
 

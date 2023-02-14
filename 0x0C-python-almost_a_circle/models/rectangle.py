@@ -50,6 +50,7 @@ class Rectangle(Base):
         self.__x = x
         self.__y = y
 
+    @property
     def get_width(self):
         """get the width
 
@@ -58,6 +59,7 @@ class Rectangle(Base):
         """
         return self.__width
 
+    @set_width.setter
     def set_width(self, width):
         """Set the width
 
@@ -75,6 +77,7 @@ class Rectangle(Base):
             raise ValueError('width must be > 0')
         self.__width = width
 
+    @property
     def get_height(self):
         """get the height
 
@@ -83,6 +86,7 @@ class Rectangle(Base):
         """
         return self.__height
 
+    @set_height.setter
     def set_height(self, height):
         """Set the height
 
@@ -100,6 +104,7 @@ class Rectangle(Base):
             raise ValueError('height must be > 0')
         self.__height = height
 
+    @property
     def get_x(self):
         """get the x
 
@@ -108,6 +113,7 @@ class Rectangle(Base):
         """
         return self.__x
 
+    @set_x.setter
     def set_x(self, x):
         """Set the x
 
@@ -125,6 +131,7 @@ class Rectangle(Base):
             raise ValueError('x must be >= 0')
         self.__x = x
 
+    @property
     def get_y(self):
         """get the y
 
@@ -133,6 +140,7 @@ class Rectangle(Base):
         """
         return self.__y
 
+    @set_y.setter
     def set_y(self, y):
         """Set the y
 
@@ -189,24 +197,32 @@ class Rectangle(Base):
             for i in range(len(args)):
                 if i == 0:
                     self.id = args[i]
-                elif i == 1:
+                elif i ==
+                @set_width.setter 1:
                     self.set_width(args[i])
-                elif i == 2:
+                elif i ==
+                @set_height.setter 2:
                     self.set_height(args[i])
-                elif i == 3:
+                elif i ==
+                @set_x.setter 3:
                     self.set_x(args[i])
-                elif i == 4:
+                elif i ==
+                @set_y.setter 4:
                     self.set_y(args[i])
         elif kwargs is not None:
 
             for k, v in kwargs.items():
-                if k == 'width':
+                if k == '
+                @set_width.setterwidt   h':
                     self.set_width(v)
-                elif k == 'height':
+                elif k ==
+                @set_height.setter 'he   ight':
                     self.set_height(v)
-                elif k == 'x':
+                elif k ==
+                @set_x.setter 'x'   :
                     self.set_x(v)
-                elif k == 'y':
+                elif k ==
+                @set_y.setter 'y'   :
                     self.set_y(v)
                 elif k == 'id':
                     self.id = v
@@ -220,9 +236,13 @@ class Rectangle(Base):
         """
         dict = {
             'id': self.id,
-            'width': self.get_width(),
-            'height': self.get_height(),
-            'x': self.get_x(),
+            @property
+            'width': self.g
+            @propertyet_width(),
+            'height':
+            @propertyself.get_height(),
+            'x': self.
+            @propertyget_x(),
             'y': self.get_y()
         }
         return dict
