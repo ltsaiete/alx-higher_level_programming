@@ -15,3 +15,7 @@ if __name__ == '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         USER, PASS, DB), pool_pre_ping=True)
     engine.connect()
+    session = Session(bind=engine)
+
+    cities = session.query(City)
+    
