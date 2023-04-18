@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 This is a simple module and it only has
-one function called the class definition of a State and
+ the class definition of a City and
 an instance Base = declarative_base()
 """
 
@@ -11,16 +11,18 @@ from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 
 
-class State(Base):
+class City(Base):
     """
-    This is the class definition of a State
+    This is the class definition of a City
 
     Args:
-        arg_1(type): description
+        id(int): city id
+        name(str): city name
 
     Returns:
         void
     """
-    __tablename__ = 'states'
+    __tablename__ = 'cities'
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(128))
+    state_id = Column()
