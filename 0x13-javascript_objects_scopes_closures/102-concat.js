@@ -1,5 +1,4 @@
 #!/usr/bin/node
-const { error } = require('console');
 const fs = require('fs');
 
 const argv = process.argv;

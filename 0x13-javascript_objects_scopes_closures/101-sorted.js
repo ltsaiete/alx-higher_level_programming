@@ -3,11 +3,11 @@ const { dict } = require('./101-data');
 
 const newDict = {};
 for (const key in dict) {
-	if (newDict.hasOwnProperty(dict[key])) {
-		newDict[dict[key]].push(key);
-	} else {
-		newDict[dict[key]] = [key];
-	}
+  if (newDict.hasOwnProperty(dict[key])) {
+    newDict[dict[key]].push(key);
+  } else {
+    newDict[dict[key]] = [key];
+  }
 }
 
 console.log(newDict);
