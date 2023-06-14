@@ -2,8 +2,8 @@
 
 const argv = process.argv;
 
-if (Boolean(Number(argv[2]))) {
-	console.log(`My number: ${Number(argv[2])}`);
+if (Number(argv[2])) {
+  console.log(`My number: ${Number(argv[2])}`);
 } else {
-	console.log('Not a number');
+  console.log('Not a number');
 }
