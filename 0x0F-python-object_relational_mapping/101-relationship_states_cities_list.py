@@ -6,7 +6,9 @@ City objects, contained in the database hbtn_0e_101_usa
 
 import sys
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, sessionmaker
+from relationship_state import State, Base
+from relationship_city import City
 
 if __name__ == '__main__':
     USER = sys.argv[1]
@@ -16,4 +18,12 @@ if __name__ == '__main__':
         USER, PASS, DB), pool_pre_ping=True)
     engine.connect()
 
-    session = Session(bind=engine)
+    Session = sessionmaker(bind=engine)
+    session = Session()
+
+    states = session.query(State).all()
+    for state in states:
+        print(f'{state.id}: {state.name}')
+        cities = state.cities
+        for city in cities:
+            print(f'    {city.id}: {city.name}')
