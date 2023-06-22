@@ -21,7 +21,7 @@ if __name__ == '__main__':
         SELECT * FROM states
         WHERE name LIKE 'N%' AND name REGEXP BINARY '^[A-Z]'
         ORDER BY id"""
-                )
+        )
 
     rows = cur.fetchall()
     for row in rows:
