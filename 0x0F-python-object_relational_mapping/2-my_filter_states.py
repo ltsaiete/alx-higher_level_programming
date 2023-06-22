@@ -11,14 +11,14 @@ if __name__ == '__main__':
 
     HOST = 'localhost'
     USER = sys.argv[1]
-    PASS = sys.argv[2]
+    PASS = ''  # sys.argv[2]
     DB = sys.argv[3]
 
     db = MySQLdb.connect(host=HOST, user=USER, passwd=PASS, db=DB)
 
     cur = db.cursor()
     cur.execute(
-        "SELECT * FROM states WHERE name = {} ORDER BY id".format(sys.argv[4]))
+        "SELECT * FROM states WHERE name = '{}' ORDER BY id".format(sys.argv[4]))
 
     rows = cur.fetchall()
     for row in rows:
