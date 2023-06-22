@@ -19,5 +19,11 @@ if __name__ == '__main__':
 
     session = Session(bind=engine)
 
-    session.query(State).filter(State.name.contains('a')).delete(synchronize_session='fetch')
+    session.query(
+        State
+    ).filter(
+        State.name.contains('a')
+    ).delete(
+        synchronize_session='fetch'
+    )
     session.commit()
