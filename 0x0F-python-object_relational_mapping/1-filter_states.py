@@ -17,11 +17,8 @@ if __name__ == '__main__':
     db = MySQLdb.connect(host=HOST, user=USER, passwd=PASS, db=DB)
     cur = db.cursor()
 
-    cur.execute("""
-        SELECT * FROM states
-        WHERE name LIKE 'N%' AND name REGEXP BINARY '^[A-Z]'
-        ORDER BY id"""
-        )
+    cur.execute(
+        "SELECT * FROM states WHERE name LIKE 'N%' AND name REGEXP BINARY '^[A-Z]' ORDER BY id;")
 
     rows = cur.fetchall()
     for row in rows:
