@@ -12,7 +12,7 @@ from relationship_city import City
 
 if __name__ == '__main__':
     USER = sys.argv[1]
-    PASS = '' #sys.argv[2]
+    PASS = sys.argv[2]
     DB = sys.argv[3]
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'.format(
         USER, PASS, DB), pool_pre_ping=True)
