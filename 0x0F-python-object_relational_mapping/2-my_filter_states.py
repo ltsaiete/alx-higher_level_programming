@@ -20,6 +20,7 @@ if __name__ == '__main__':
     cur.execute(
         """SELECT * FROM states
         WHERE name = '{}'
+        COLLATE utf8mb4_bin
         ORDER BY id""".format(sys.argv[4])
     )
 
