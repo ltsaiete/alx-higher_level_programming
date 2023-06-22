@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cur = db.cursor()
 
     cur.execute(
-        "SELECT * FROM states WHERE name LIKE 'N%' AND name REGEXP BINARY '^[A-Z]' ORDER BY id;")
+        "SELECT * FROM states WHERE name LIKE 'N%' AND name REGEXP '^[A-Z]' ORDER BY id;")
 
     rows = cur.fetchall()
     for row in rows:
