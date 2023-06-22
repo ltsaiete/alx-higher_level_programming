@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
     HOST = 'localhost'
     USER = sys.argv[1]
-    PASS = sys.argv[2]
+    PASS = ''  # sys.argv[2]
     DB = sys.argv[3]
 
     db = MySQLdb.connect(host=HOST, user=USER, passwd=PASS, db=DB)
@@ -29,5 +29,5 @@ if __name__ == '__main__':
         print(rows[i][0], end="")
         if i != len(rows) - 1:
             print(', ', end="")
-        else:
-            print()
+
+    print()
